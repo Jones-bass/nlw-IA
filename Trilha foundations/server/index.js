@@ -2,15 +2,17 @@ import cors from "cors"
 import express from "express"
 
 import { download } from "./download.js"
+import { transcribe } from "./transcribe.js"
 
 const app = express()
 app.use(express.json())
 app.use(cors())
 
 app.get("/summary/:id", async (request, response) => {
-  download(request.params.id)
-    
-  return response.json({ result: 'Download do video realizado com sucesso' })
+  await download(request.params.id)
+  const result = await transcribe()
+  
+  return response.json({ result})
 })
 
 

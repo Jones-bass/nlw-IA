@@ -16,11 +16,15 @@ export const download = (videoId) => new Promise((resolve, reject) => {
     .on("end", () => {
       console.log("Download do vídeo finalizado.")
     })
+    resolve()
+
     .on("error", (error) => {
       console.log(
         "Não foi possível fazer o download do vídeo. Detalhes do erro:",
         error
       )
+      reject()
+
     })
     .pipe(fs.createWriteStream("./tmp/audio.mp4"))
 })
