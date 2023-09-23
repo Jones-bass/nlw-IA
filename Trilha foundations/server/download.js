@@ -15,8 +15,8 @@ export const download = (videoId) => new Promise((resolve, reject) => {
     })
     .on("end", () => {
       console.log("Download do vídeo finalizado.")
+      resolve()
     })
-    resolve()
 
     .on("error", (error) => {
       console.log(
