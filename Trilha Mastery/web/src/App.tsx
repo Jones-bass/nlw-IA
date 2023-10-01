@@ -5,8 +5,12 @@ import { Separator } from './components/ui/separator'
 import { Textarea } from './components/ui/textarea'
 import { VideoInputForm } from './components/video-input-form'
 import { Label } from './components/ui/label'
+import { PromptSelect } from './components/prompt-select'
 
-function App() {
+export function App() {
+  function handlePromptsSelectd(template: string) {
+    console.log(template)
+  }
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -53,11 +57,11 @@ function App() {
           <form className="space-y-6">
             <div className="space-y-2">
               <Label>Prompt</Label>
+              <PromptSelect onPromptSelected={handlePromptsSelectd} />
+
               </div>
 
-            <div className="space-y-2">
-              <Label>Modelo</Label>
-              </div>
+            
 
             <Separator />
 
