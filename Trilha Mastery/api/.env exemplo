@@ -1,0 +1,4 @@
+
+DATABASE_URL="file:./dev.db"
+
+OPENAI_KEY="sk-XUSnFiQKBuDOIFjqvfVtT3BlbkFJ8GcLoNzojgPzJOCxPN"
